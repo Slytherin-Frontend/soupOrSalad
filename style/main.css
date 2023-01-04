@@ -9,7 +9,18 @@
     overflow: auto;
   }
   
+  h1 {
+    padding-left: 210px;
+    text-align: center;
+  }
+
   /* Sidebar links */
+  .sidebar div {
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+  }
   .sidebar a {
     display: block;
     color: white;
@@ -25,7 +36,6 @@
   
   /* Links on mouse-over */
   .sidebar a:hover:not(.active) {
-    background-color: #555;
     color: white;
   }
   
@@ -43,13 +53,13 @@
       height: auto;
       position: relative;
     }
-    .sidebar a {float: left;}
+    .sidebar div {float: left;}
     div.content {margin-left: 0;}
   }
   
   /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
   @media screen and (max-width: 400px) {
-    .sidebar a {
+    .sidebar div {
       text-align: center;
       float: none;
     }
