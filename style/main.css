@@ -1,4 +1,11 @@
+
+
 /* The side navigation menu */
+.jumbotron {
+  background-color: transparent; 
+  text-align: center;
+}
+
 .sidebar {
     margin: 0;
     padding: 0;
