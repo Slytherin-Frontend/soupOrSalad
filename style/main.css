@@ -71,7 +71,9 @@
     padding-left: 210px;
   }
 
-
+.card a {
+  color: white;
+}
 
   div.content {
     margin-left: 200px;
