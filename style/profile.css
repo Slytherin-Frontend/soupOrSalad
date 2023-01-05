@@ -62,11 +62,18 @@
 
   /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
   h1 {
+    padding-left: 210px;
+    text-align: center;
+    position: sticky;
+  }
 
+  h2 {
+    padding-left: 210px;
     text-align: center;
     position: sticky;
   }
   
+
   .container-fluid content {
     padding-left: 210px;
   }
@@ -92,9 +99,6 @@
   position: relative;
   align-items: center;
 }
-  /* recipe card stick img
-  https://www.w3schools.com/howto/howto_css_image_sticky.asp
-  */
   
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -107,6 +111,19 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+
+/* preferences */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+    justify-content: space-between;
+}
+select {
+    width: 120px;
 }
 
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
