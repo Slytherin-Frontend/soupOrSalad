@@ -9,10 +9,7 @@
     overflow: auto;
   }
   
-  h1 {
-    padding-left: 210px;
-    text-align: center;
-  }
+
 
   /* Sidebar links */
   .sidebar div {
@@ -25,7 +22,7 @@
     display: block;
     color: white;
     padding: 16px;
-    text-decoration: none;
+    text-decoration: underline;
   }
   
   /* Active/current link */
@@ -39,13 +36,75 @@
     color: white;
   }
   
+
+  /* The header bar */
+.site-header { 
+  border-bottom: 1px solid #ccc;
+  padding: .5em 1em;
+  
+}
+
+.site-header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.site-identity {
+  float:right;
+}
+
+.site-identity img {
+  max-width: 155px;
+  float: right;
+  margin: 0 10px 0 0;
+}
+
   /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  h1 {
+    padding-left: 210px;
+    text-align: center;
+    position: sticky;
+  }
+  
+  .container-fluid content {
+    padding-left: 210px;
+  }
+
+
+
   div.content {
     margin-left: 200px;
     padding: 1px 16px;
     height: 1000px;
   }
+
+
+/* Card deck */
+
+.row{
+  padding-left: 3%;
+  padding-bottom: 5%;
+  position: relative;
+  align-items: center;
+}
+  /* recipe card stick img
+  https://www.w3schools.com/howto/howto_css_image_sticky.asp
+  */
   
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+.card-img {
+
+  opacity: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
   @media screen and (max-width: 700px) {
     .sidebar {
