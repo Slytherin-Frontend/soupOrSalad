@@ -81,7 +81,9 @@
     height: 1000px;
   }
 
-
+.sectionHeading {
+  text-align: center;
+}
 /* Card deck */
 
 .row{
