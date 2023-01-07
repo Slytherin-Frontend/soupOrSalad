@@ -24,7 +24,6 @@
     <!-- The sidebar -->
     <div class="sidebar bg-light" style="padding-top: 4.3rem;">
         <li class="weather" id="weather-location">You are in:</li>
-        <li class="weather" id="location-info"></li>
         <li class="weather" id="weather-averageTemp">Day average</li>
         <li class="weather" id="weather-temp">Temp now</li>
         <li class="weather" id="weather-feels">Feels like</li>
@@ -37,14 +36,27 @@
     <!-- Page content -->
     <div class="content">
         <div class="jumbotron">
-            <h1 class="text-center">Food and Recipe search</h1>
+            <h1 class="text-center">Find your recipe here</h1>
             <hr class="my-4">
-            <div class="text-center">Enter a dish you like to see how it works (ie. chocolate crossaint)
-            </div>
             <div class="text-center">
                 <h2>What would you like to eat today?</h2>
+                <div class="text-center">Enter a dish you like to see how it works &#129365
+                </div>
+
             </div>
 
+    <!-- Recipe results -->
+            <div class="card text-center" style="width: 50 rem">
+                <div class="card-body" id="card-body">
+                    <h2>Recipes here</h2>
+                    <br>
+                    <div class="jumbotron jumbotron-fluid text-center">
+                        <div class="container">
+                            <p class="lead"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="./js/main.js"></script>
