@@ -2,6 +2,7 @@
 head > nav {
     background-color: transparent;
 }
+
 /* The side bar menu */
 .sidebar {
     margin: 0;
@@ -29,8 +30,7 @@ head > nav {
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+    opacity: 80%;
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
