@@ -135,7 +135,7 @@ let weather = {
         const {temperature,time,windspeed,weathercode} = data.current_weather;
         const {temperature_2m_max,temperature_2m_min,precipitation_sum} = data.daily;
         
-        console.log(temperature,time.slice(11,16),windspeed,temperature_2m_max[0],temperature_2m_min[0],precipitation_sum[0]);
+        console.log(time.slice(11,16),temperature,windspeed,temperature_2m_max[0],temperature_2m_min[0],precipitation_sum[0]);
         console.log(data);
         document.querySelector(".city").innerHTML="weather in:\n"+userLocName;
         document.querySelector(".weatherNow").innerHTML="weather now:\n"+weatherCodes[weathercode];
