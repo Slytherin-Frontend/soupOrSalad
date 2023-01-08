@@ -2,134 +2,148 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Soup Or Salad Recipe Page</title>
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <!-- font awesome style -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
-    crossorigin="anonymous" />
-  <!-- original stylesheet -->
-  <link rel="stylesheet" href="./style/main.css">
-  <nav class="navbar fixed-top navbar-light">
-    <img class="navbar-brand" src="sos_logo.png" width="100rem" />
-  </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soup Or Salad Recipe Page</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- font awesome style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <!-- original stylesheet -->
+    <link rel="stylesheet" href="./style/main.css">
+    <nav class="navbar fixed-top navbar-light">
+        <img class="navbar-brand" src="sos_logo.png" width="100rem" />
+    </nav>
 </head>
 
 <body>
 
-  <!-- The sidebar -->
-  <div class="sidebar bg-light" style="padding-top: 4.3rem;">
-    <li class="weather" id="weather-location">You are in:</li>
-    <li class="weather" id="weather-averageTemp">Day average</li>
-    <li class="weather" id="weather-temp">Temp now</li>
-    <li class="weather" id="weather-feels">Feels like</li>
-    <li class="weather" id="weather-rain">Chance of rain</li>
-    <li class="weather" id="weather-wind">Wind speed</li>
-    <li class="profile"><a href="profile.html"><i class="fa fa-3x  fa-user icon-cog" style="color: #c8c8f6;"></i></a></li>
-  </div>
-
-  <!-- Page content -->
-  <div class="content">
-    <div class="jumbotron">
-      <h1 class="text-center">Soup or Salad</h1>
-      <h2 class="lead">It's Salad Day!</h2>
-      <hr class="my-4">
-      <div class="card-group">
-        <div class="card">
-          <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title" id="salad1">title</h5>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">More
-              details</button>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title" id="salad2">title</h5>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">More
-              details</button>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title" id="salad3">title</h5>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">More
-              details</button>
-          </div>
-        </div>
-      </div>
-      <div class="card-group">
-        <div class="card">
-          <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title" id="salad4">title</h5>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">More
-              details</button>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://picsum.photos/320/240/" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title" id="salad5">title</h5>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">More
-              details</button>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title" id="salad6">title</h5>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".bd-example-modal-lg">More
-              details</button>
-          </div>
-        </div>
-      </div>
-      <br>
-      <div class="lead">
-        <a class="btn btn-secondary btn-lg" href="#" role="button">Explore more options</a>
-      </div>
+    <!-- The sidebar -->
+    <div class="sidebar bg-light" style="padding-top: 4.3rem;">
+        <li class="weather" id="weather-location">You are in:</li>
+        <li class="weather" id="weather-averageTemp">Day average</li>
+        <li class="weather" id="weather-temp">Temp now</li>
+        <li class="weather" id="weather-feels">Feels like</li>
+        <li class="weather" id="weather-rain">Chance of rain</li>
+        <li class="weather" id="weather-wind">Wind speed</li>
+        <li class="profile"><a href="profile.html"><i class="fa fa-3x  fa-user icon-cog"
+                    style="color: #c8c8f6;"></i></a></li>
     </div>
 
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <h1>Recipe details</h1>
-          <!-- Populated info -->
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, consectetur sint illo dolores incidunt
-            accusantium doloremque. Iure sapiente veritatis corporis temporibus, cupiditate nisi adipisci dicta
-            magnam, voluptas consequatur voluptatem eaque voluptates distinctio eius ipsa corrupti sit nam facilis
-            optio accusamus! Esse repudiandae at ipsum, est veritatis eveniet laboriosam amet exercitationem dolorum
-            dolor asperiores ducimus magni id. Itaque corporis libero, suscipit mollitia rerum nam tempore delectus,
-            provident consequuntur aliquam vero dolores in officiis eveniet quia veniam. Aut, officiis. Repudiandae
-            nemo vitae necessitatibus nostrum labore officiis, commodi cupiditate, repellat suscipit, ab minima
-            voluptatum illum temporibus optio similique obcaecati tempora eius corporis? Rem!
-          </p>
+    <!-- Page content -->
+    <div class="content">
+        <div class="jumbotron">
+            <h1 class="text-center">Soup or Salad</h1>
+            <h2 class="lead text text-center">It's Salad Day!</h2>
+            <hr class="my-4">
+            <div class="card-group">
+                <div class="card">
+                    <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="salad1">title</h5>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">More
+                            details</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="salad2">title</h5>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">More
+                            details</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="salad3">title</h5>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">More
+                            details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-group">
+                <div class="card">
+                    <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="salad4">title</h5>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">More
+                            details</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://picsum.photos/320/240/" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="salad5">title</h5>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">More
+                            details</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="https://loremflickr.com/320/240/salad" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" id="salad6">title</h5>
+                        <button type="button" class="btn btn-secondary" data-toggle="modal"
+                            data-target=".bd-example-modal-lg">More
+                            details</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="lead">
+                <a class="btn btn-secondary btn-lg" href="#" role="button">Explore more options</a>
+            </div>
         </div>
-      </div>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <h1>Recipe details</h1>
+                    <!-- Populated info -->
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam, consectetur sint illo dolores
+                        incidunt
+                        accusantium doloremque. Iure sapiente veritatis corporis temporibus, cupiditate nisi adipisci
+                        dicta
+                        magnam, voluptas consequatur voluptatem eaque voluptates distinctio eius ipsa corrupti sit nam
+                        facilis
+                        optio accusamus! Esse repudiandae at ipsum, est veritatis eveniet laboriosam amet exercitationem
+                        dolorum
+                        dolor asperiores ducimus magni id. Itaque corporis libero, suscipit mollitia rerum nam tempore
+                        delectus,
+                        provident consequuntur aliquam vero dolores in officiis eveniet quia veniam. Aut, officiis.
+                        Repudiandae
+                        nemo vitae necessitatibus nostrum labore officiis, commodi cupiditate, repellat suscipit, ab
+                        minima
+                        voluptatum illum temporibus optio similique obcaecati tempora eius corporis? Rem!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
     </div>
-    <br>
-  </div>
-  </div>
-  </div>
-  </div>
-  <script src="./js/main.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+    </div>
+    </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
