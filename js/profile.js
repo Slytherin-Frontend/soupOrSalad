@@ -62,8 +62,11 @@ let userLocation = {
                 selectedArray = responseArray[i]
                 let lat = [selectedArray.latitude]
                 let lon = [selectedArray.longitude]
+                let locName = [selectedArray.name+", "+selectedArray.country_code]
                 localStorage.setItem("lat", lat)
                 localStorage.setItem("lon", lon)
+                localStorage.setItem("placeName",locName)
+                
             }
         }
     },
@@ -82,15 +85,20 @@ let userLocation = {
 
 let userLat = localStorage.getItem("lat")
 let userLon = localStorage.getItem("lon")
+let userLocName = localStorage.getItem("placeName")
 
 
 
 let weather = {
     fetchWeather: function () {
         fetch("https://api.open-meteo.com/v1/forecast?latitude=" +userLat + "&longitude=" +userLon + "&hourly=temperature_2m,relativehumidity_2m,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,windspeed_10m_max&current_weather=true&timezone=Europe%2FLondon"
-        ).then((response) => response.json()).then((data) => console.log(data));
+        ).then((response) => response.json()).then((data) => this.displayWeather(data));
     },
     displayWeather: function (data) {
         const { name } = data;
+        const {icon, description} = data.weather;
+        const {temp, humidity} = data.main;
+        const {speed} = data.wind;
+        console.log(name, icon,description,temp,humidity,speed)
     }
 }
