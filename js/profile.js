@@ -93,6 +93,38 @@ let userLocName = localStorage.getItem("placeName")
 let userTimeZone = localStorage.getItem("timezone")
 
 
+// weather code descriptions
+let weatherCodes = {
+0:"Clear sky",
+1:"Mainly clear",
+2:"Partly cloudy",
+3:"Overcast",
+45:"Fog",
+48:"Depositing rime fog",
+51:"Light drizzle",
+53:"Moderate drizzle",
+55:"Dense drizzle",
+56:"Light, freezing drizzle",
+57:"Dense, freezing drizzle",
+61:"Slight rain",
+63:"Moderate rain", 
+65:"Heavy rain",
+66:"Light, freezing drizzle", 
+67:"Heavy, freezing drizzle",
+71:"Slight snowfall", 
+73:"Moderate snowfall", 
+75:"Heavy snowfall",
+77:"Snow grains",
+80:"Slight rain",
+81:"Moderate rain", 
+82:"Violent rain",
+85:"Slight snow showers", 
+86:"Heavy snow showers",
+95:"Slight to moderate thunderstorm",
+96:"Thunderstorm with slight hail", 
+99: "Thunderstorm with heavy hail"
+}
+
 //weather api call
 let weather = {
     fetchWeather: function () {
@@ -100,11 +132,17 @@ let weather = {
         ).then((response) => response.json()).then((data) => this.displayWeather(data));
     },
     displayWeather: function (data) {
-        var name = userLocName;
-        const {temperature,time,windspeed} = data.current_weather;
+        const {temperature,time,windspeed,weathercode} = data.current_weather;
         const {temperature_2m_max,temperature_2m_min,precipitation_sum} = data.daily;
         
-        console.log(name,temperature,time.slice(11,16),windspeed,temperature_2m_max[0],temperature_2m_min[0],precipitation_sum[0])
-        console.log(data)
+        console.log(temperature,time.slice(11,16),windspeed,temperature_2m_max[0],temperature_2m_min[0],precipitation_sum[0]);
+        console.log(data);
+        document.querySelector(".city").innerHTML="weather in:\n"+userLocName;
+        document.querySelector(".weatherNow").innerHTML="weather now:\n"+weatherCodes[weathercode];
+        document.querySelector(".temp").innerHTML="temp now:\n"+temperature+"°C";
+        document.querySelector(".maxTemp").innerHTML="max temp today:\n"+temperature_2m_max[0]+"°C";
+        document.querySelector(".minTemp").innerHTML="min temp today:\n"+temperature_2m_min[0]+"°C";
+        document.querySelector(".precipitation").innerHTML="total rain today:\n"+precipitation_sum[0]+"mm";
+        document.querySelector(".wind").innerHTML="max windspeed:\n"+windspeed+"km/h";
     }
 }
