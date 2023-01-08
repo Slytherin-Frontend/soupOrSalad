@@ -40,11 +40,18 @@
             <hr class="my-4">
             <div class="text-center">
                 <h2>What would you like to eat today?</h2>
-                <div class="text-center">Enter a dish you like to see how it works &#129365
-                </div>
-
+                <div class="text-center">Enter a dish you like to see how it works &#129365</div>
+                <div class="search-container">
+                    <form class="form-inline">
+                        <div class="form-group mx-md-3 mb-2">
+                          <label for="inputRecipe" class="sr-only">Password</label>
+                          <input class="form-control text-center" type="text" placeholder="Enter an ingredient">
+                        </div>
+                        <button type="submit" class="btn btn-secondary mb-2"><i class="fa fa-search"></i></button>
+                      </form>
+                  </div>
             </div>
-
+<br>
     <!-- Recipe results -->
             <div class="card text-center" style="width: 50 rem">
                 <div class="card-body" id="card-body">
@@ -52,7 +59,8 @@
                     <br>
                     <div class="jumbotron jumbotron-fluid text-center">
                         <div class="container">
-                            <p class="lead"></p>
+                            <div class="lead text-center">
+                            </div>
                         </div>
                     </div>
                 </div>
