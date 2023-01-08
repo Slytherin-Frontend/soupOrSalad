@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./style/profile.css">
   </head>
   <body>
-  
+ 
   
   <div class="sidebar">
   <div class="weather">You are in: </div>
@@ -23,6 +23,7 @@
   <div class="weather">chance of rain</div>
   <div class="weather">wind speed</div>
   <a href="profile.html"><i class="fa fa-3x  fa-user"></i></a> 
+   <A href="meteo.html">link</a>
   </div>
 
 
@@ -35,6 +36,16 @@
 
 <div class="container-fluid content col-9 offset-3">
     <h2 class="sectionHeading"> User Preferences</h2>
+    <div class="input-group mb-3">
+          <div class="form-floating dropdown">
+            <input type="text" class="form-control" id="select_city" autocomplete="off" spellcheck="false" aria-label="Select city" data-bs-toggle="dropdown">
+            <ul id="select_city_results" class="dropdown-menu" aria-labelledby="select_city">
+              <li><span class="dropdown-item">Start typing to search for locations</span></li>
+            </ul>
+            <label for="select_city">Select city</label>
+          </div>
+          <button class="btn btn-outline-secondary" type="button" id="detect_gps">Detect GPS Position</button>
+        </div>
 
     <p>Select your favorite colors:</p>
     <label for="c1"> <input type="checkbox" name="color" value="red" id="c1">Red</label>
@@ -46,7 +57,7 @@
 </div>
 
 
-
+<script src="jquery-3.6.1.min.js"></script>
 	<script src="./js/profile.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
