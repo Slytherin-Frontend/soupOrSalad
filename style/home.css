@@ -1,0 +1,29 @@
+.h2 {
+    text-align: center;
+    color: orange;
+}
+
+.btn {
+    background-color: #1E429D;
+    size: 100px;
+    /* text-align: center;
+    margin-left:200px; */
+    color: white;
+    text-decoration: solid;
+    font-size:large;
+}
+.center {
+    margin-left:200px;
+    text-align: center;
+    /* background-color: lightblue; */
+}
+.footer {
+    margin-left:200px;
+    text-align: center;
+}
+.title{
+    background-color: lightblue;
+}
+
+
+
