@@ -10,13 +10,14 @@
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="./style/profile.css">
+
   </head>
   <body>
  
   
   <div class="sidebar">
   <div class="weather">  <button href="profile.html" class="weather">update location</button> 
-    <div class="city">weather in </div>
+    <div class="city" id="city">weather in </div>
   <div class="weatherNow">
   It looks like you
   </div>
@@ -48,15 +49,25 @@ Click the button
 
 <div class="container-fluid content col-9 offset-3">
     <h2 class="sectionHeading"> User Preferences</h2>
-
-
-    <p>Select your favorite colors:</p>
+    <div class="search">
+    <h5 class="prefHeading">Location</h5>
+    <input type="text" class="search-bar city-bar" placeholder="Enter your city"> 
+    <input type="text" class="search-bar country-bar" placeholder="Enter your country">
+    
+    <!-- "someID" for potential future dynamic checkboxes --> 
+    <div id="someId"></div>
+    <button> submit</button>
+    <button class="save"> save</button>
+    </div>
+    <div class="diet-preferences">
+  
+    <h5>Select your favorite colors:</h5>
     <label for="c1"> <input type="checkbox" name="color" value="red" id="c1">Red</label>
     <label for="c2"><input type="checkbox" name="color" value="green" id="c2"> Green</label>
     <label for="c3"><input type="checkbox" name="color" value="blue" id="c3">Blue</label>
     <p>
         <button id="btn">Get Selected Colors</button>
-    </p>
+    </p></div>
 </div>
 
 

@@ -82,6 +82,10 @@ let userLocation = {
     displayLocation: function (data) {
         const { name } = data;
     },
+    search: function(){
+        this.fetchLocation(
+            document.querySelector(".city-bar").value,document.querySelector(".country-bar").value)
+    }
 
 }
 
@@ -128,9 +132,13 @@ let weatherCodes = {
 //weather api call
 let weather = {
     fetchWeather: function () {
+        if (userLat&&userLon&&userTimeZone != null){
         fetch("https://api.open-meteo.com/v1/forecast?latitude=" +userLat + "&longitude=" +userLon + "&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,windspeed_10m_max&current_weather=true&timezone="+userTimeZone
         ).then((response) => response.json()).then((data) => this.displayWeather(data));
-    },
+    }
+        else{}
+    
+},
     displayWeather: function (data) {
         const {temperature,time,windspeed,weathercode} = data.current_weather;
         const {temperature_2m_max,temperature_2m_min,precipitation_sum} = data.daily;
@@ -144,9 +152,30 @@ let weather = {
         document.querySelector(".minTemp").innerHTML="min temp today:\n"+temperature_2m_min[0]+"°C";
         document.querySelector(".precipitation").innerHTML="total rain today:\n"+precipitation_sum[0]+"mm";
         document.querySelector(".wind").innerHTML="max windspeed:\n"+windspeed+"km/h";
-    }
-};
+    },
+    
+}
+
+
 
 window.onload = function (){
-    weather.fetchWeather()
-};
+    weather.fetchWeather();
+}
+
+document.querySelector(".search button").addEventListener("click",function(){
+    userLocation.search();
+})
+
+document.querySelector(".search button").addEventListener("click",function(){
+    document.querySelector(".resultList").innerHTML="Search result:"
+})
+
+document.querySelector(".save").addEventListener("click", function(){
+    location.reload()
+})
+
+
+// timer to refresh the page 
+setTimeout(() => {
+    document.location.reload();
+  }, 900000);
