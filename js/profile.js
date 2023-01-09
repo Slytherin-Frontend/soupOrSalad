@@ -244,6 +244,7 @@ let weather = {
 
         console.log(time.slice(11, 16), temperature, windspeed, temperature_2m_max[0], temperature_2m_min[0], precipitation_sum[0]);
         console.log(data);
+        localStorage.setItem("temp",temperature_2m_max[0])
         document.querySelector(".city").innerHTML = "weather in:\n" + userLocName;
         document.querySelector(".weatherNow").innerHTML = "weather now:\n" + weatherCodes[weathercode];
         document.querySelector(".temp").innerHTML = "temp now:\n" + temperature + "°C";
@@ -252,6 +253,7 @@ let weather = {
         document.querySelector(".precipitation").innerHTML = "total rain today:\n" + precipitation_sum[0] + "mm";
         document.querySelector(".wind").innerHTML = "max windspeed:\n" + windspeed + "km/h";
     },
+
 
 }
 
@@ -281,3 +283,32 @@ setTimeout(() => {
 
 
 
+// suggested recipe filtering objects
+let userDiet = localStorage.getItem("dietQuery")
+let userHealth = localStorage.getItem("healthQuery")
+let userCuisine = localStorage.getItem("cuisineQuery")
+let userTemp = localStorage.getItem("temp")
+
+let recipe = {
+    
+    fetchRecipe: function(){
+        fetch("https://api.edamam.com/api/recipes/v2?type=public&app_id=5c1f4878&app_key=d220cee0e567234581f36d1404f5f7b3"+userDiet+userHealth+userCuisine+this.soupSalad()).then((response) => response.json()).then((data) => console.log(data));
+},
+    soupSalad: function(){
+        console.log(typeof userTemp)
+        choice= "&dishType="
+        // "+" turns the temp from a string into a number which can be used for comparson
+        if(+userTemp >18){
+            choice +="salad"
+            localStorage.setItem("choice","SALAD")
+            return choice
+        } else{
+            choice +="soup"
+            localStorage.setItem("choice","SOUP")
+            return choice
+        }
+
+    }
+
+
+}
