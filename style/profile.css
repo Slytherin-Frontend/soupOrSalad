@@ -122,9 +122,16 @@
     justify-content: space-between;
 }
 
-.diet-preferences {
-  display: block;
-  row-gap: 100px;
+.option-container {
+  display: block; 
+  max-height: 100px;
+  overflow: auto;
+}
+
+.preference-checkbox {
+  display: inline;
+  border: 2px;
+  padding-left: 5px;
 }
 
 

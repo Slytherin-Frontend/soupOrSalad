@@ -50,12 +50,14 @@ $(document).ready(function () {
         var list = ['High-Fiber', 'High-Protein', 'Balanced', 'Low-Carb', 'Low-Fat', 'Low-Sodium'];
         for (let value of list) {
             $('#diet-container')
-                .append(`<input type="checkbox" id="${value}" name="diet" class"preference" value="${dietPreferences[value]}">`)
+                .append(`<div class="preference-checkbox"><input type="checkbox" id="${value}" name="diet" class"preference" value="${dietPreferences[value]}">`)
                 .append(`<label for="${value}">${value}</label></div>`);
         }
 
     })
 });
+
+
 
 //health
 $(document).ready(function () {
@@ -63,7 +65,7 @@ $(document).ready(function () {
         var list = ['Alcohol-Cocktail','Alcohol-Free','Celery-Free','Crustcean-Free','Dairy-Free','DASH','Egg-Free','Fish-Free','FODMAP-Free','Gluten-Free','Immuno-Supportive','Keto-Friendly','Kidney-Friendly','Kosher','Low Potassium','Low Sugar','Lupine-Free','Mediterranean','Mollusk-Free','Mustard-Free','No oil added','Paleo','Peanut-Free','Pescatarian','Pork-Free','Red-Meat-Free','Sesame-Free','Shellfish-Free','Soy-Free','Sugar-Conscious','Sulfite-Free','Tree-Nut-Free','Vegan','Vegetarian','Wheat-Free',];
         for (let value of list) {
             $('#health-container')
-                .append(`<input type="checkbox" id="${value}" name="health" class"preference" value="${healthPreferences[value]}">`)
+                .append(`<div class="preference-checkbox"><input type="checkbox" id="${value}" name="health" class"preference" value="${healthPreferences[value]}">`)
                 .append(`<label for="${value}">${value}</label></div>`);
         }
 
@@ -77,7 +79,7 @@ $(document).ready(function () {
         var list = ['american','asian','british','caribbean','central europe','chinese','eastern europe','french','greek','indian','italian','japanese','korean','kosher','mediterranean','mexican','middle eastern','nordic','south american','south east asian','world',];
         for (let value of list) {
             $('#cuisine-container')
-                .append(`<input type="checkbox" id="${value}" name="cuisine" class"preference" value="${value}">`)
+                .append(`<div class="preference-checkbox"><input type="checkbox" id="${value}" name="cuisine" class"preference" value="${value}">`)
                 .append(`<label for="${value}">${value}</label></div>`);
         }
 
@@ -91,9 +93,18 @@ const btn = document.querySelector('#save-diet');
 // diet save
 btn.addEventListener('click', (event) => {
     let checkboxes = document.querySelectorAll('input[name="diet"]:checked');
-    let values = "";
+    let queryVal = "";
     checkboxes.forEach((checkbox) => {
-        values += checkbox.value;
+        queryVal += "&diet=" + checkbox.value;
+    });
+    localStorage.setItem('dietQuery', queryVal);
+});
+
+btn.addEventListener('click', (event) => {
+    let checkboxes = document.querySelectorAll('input[name="diet"]:checked');
+    let values = [];
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value)
     });
     localStorage.setItem('diet', values);
 });
@@ -101,9 +112,18 @@ btn.addEventListener('click', (event) => {
 // health save
 btn.addEventListener('click', (event) => {
     let checkboxes = document.querySelectorAll('input[name="health"]:checked');
-    let values = "";
+    let queryVal = "";
     checkboxes.forEach((checkbox) => {
-        values += checkbox.value;
+        queryVal += "&health=" + checkbox.value;
+    });
+    localStorage.setItem('healthQuery', queryVal);
+});
+
+btn.addEventListener('click', (event) => {
+    let checkboxes = document.querySelectorAll('input[name="health"]:checked');
+    let values = [];
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value)
     });
     localStorage.setItem('health', values);
 });
@@ -111,18 +131,21 @@ btn.addEventListener('click', (event) => {
 // cuisine save
 btn.addEventListener('click', (event) => {
     let checkboxes = document.querySelectorAll('input[name="cuisine"]:checked');
-    let values = "";
+    let queryVal = "";
     checkboxes.forEach((checkbox) => {
-        values += checkbox.value;
+        queryVal += "&cuisine=" +  checkbox.value;
+    });
+    localStorage.setItem('cuisineQuery', queryVal);
+});
+
+btn.addEventListener('click', (event) => {
+    let checkboxes = document.querySelectorAll('input[name="cuisine"]:checked');
+    let values = [];
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value)
     });
     localStorage.setItem('cuisine', values);
 });
-
-
-
-
-// https://api.edamam.com/api/recipes/v2?type=public&app_id=5c1f4878&app_key=d220cee0e567234581f36d1404f5f7b3&diet=high-fiber&diet=high-protein&diet=low-carb&diet=low-fat&health=alcohol-cocktail&health=alcohol-free&health=celery-free&health=crustacean-free&health=dairy-free&health=DASH&health=egg-free&health=fish-free&health=fodmap-free&health=gluten-free&health=immuno-supportive&health=keto-friendly&health=kidney-friendly&cuisineType=American&cuisineType=Asian&cuisineType=British
-
 
 
 
