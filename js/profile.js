@@ -145,4 +145,8 @@ let weather = {
         document.querySelector(".precipitation").innerHTML="total rain today:\n"+precipitation_sum[0]+"mm";
         document.querySelector(".wind").innerHTML="max windspeed:\n"+windspeed+"km/h";
     }
-}
+};
+
+window.onload = function (){
+    weather.fetchWeather()
+};
