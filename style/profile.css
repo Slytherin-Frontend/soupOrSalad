@@ -115,13 +115,19 @@
 
 
 /* preferences */
-.container {
-    display: flex;
-    flex-direction: column;
+#diet-container {
+    display: inline-block;
     align-items: center;
-    height: 60px;
+    overflow:auto;
     justify-content: space-between;
 }
+
+.diet-preferences {
+  display: block;
+  row-gap: 100px;
+}
+
+
 select {
     width: 120px;
 }

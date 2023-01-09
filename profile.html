@@ -11,6 +11,7 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="./style/profile.css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
  
@@ -59,15 +60,23 @@ Click the button
     <button> submit</button>
     <button class="save"> save</button>
     </div>
-    <div class="diet-preferences">
-  
-    <h5>Select your favorite colors:</h5>
-    <label for="c1"> <input type="checkbox" name="color" value="red" id="c1">Red</label>
-    <label for="c2"><input type="checkbox" name="color" value="green" id="c2"> Green</label>
-    <label for="c3"><input type="checkbox" name="color" value="blue" id="c3">Blue</label>
-    <p>
-        <button id="btn">Get Selected Colors</button>
-    </p></div>
+      <div class="diet-preferences">
+      <h5 class="prefHeading"> Diet Preferences</h5>
+      <div id="diet-container">
+      </div>
+      </div>
+      <div class="health-preferences">
+          <h5 class="prefHeading"> Health Preferences</h5>
+            <div id="health-container">
+            </div>
+
+      </div>
+      <div class="cuisine-preferences">
+        <h5 class="prefHeading"> Cuisine Preferences</h5>
+          <div id="cuisine-container">
+          </div>
+        
+      </div><button id="save-diet" >Save</button>
 </div>
 
 
