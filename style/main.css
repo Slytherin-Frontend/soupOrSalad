@@ -1,129 +1,77 @@
-/* The side navigation menu */
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color:  #1E429D;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
+/* Nav bar style */
+head > nav {
+    background-color: transparent;
 }
 
-
+/* The side bar menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
 
 /* Sidebar links */
-.sidebar div {
-  display: block;
-  color: white;
-  padding: 16px;
-  text-decoration: none;
-}
-.sidebar a {
-  display: block;
-  color: white;
-  padding: 16px;
-  text-decoration: underline;
+.sidebar li {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
 }
 
 /* Active/current link */
 .sidebar a.active {
-  background-color: #FFDE59;
-  color: white;
+    color: white;
 }
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-  color: white;
-}
-
-
-/* The header bar */
-.site-header { 
-border-bottom: 1px solid #ccc;
-padding: .5em 1em;
-
-}
-
-.site-header::after {
-content: "";
-display: table;
-clear: both;
-}
-
-.site-identity {
-float:right;
-}
-
-.site-identity img {
-max-width: 155px;
-float: right;
-margin: 0 10px 0 0;
+    opacity: 80%;
 }
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-h1 {
-
-  text-align: center;
-  position: sticky;
-}
-
-.container-fluid content {
-  padding-left: 210px;
-}
-
-.card a {
-color: white;
-}
-
 div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
 }
+/* search container */
+.search-container > form {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 1rem;
 
-.sectionHeading {
-text-align: center;
 }
-/* Card deck */
-
-.row{
-padding-left: 3%;
-padding-bottom: 5%;
-position: relative;
-align-items: center;
-}
-/* recipe card stick img
-https://www.w3schools.com/howto/howto_css_image_sticky.asp
-*/
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.card-img {
-
-opacity: 30%;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-position: relative;
+/* Recipe result page */
+.jumbotron {
+    background-color: transparent;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
 @media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar div {float: left;}
-  div.content {margin-left: 0;}
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar li {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
 }
 
 /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
-  .sidebar div {
-    text-align: center;
-    float: none;
-  }
+    .sidebar li {
+        text-align: center;
+        float: none;
+    }
 }

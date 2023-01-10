@@ -5,11 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="profile.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
+ 
+  
+  <div class="sidebar">
+  <div class="weather">  <button href="profile.html" class="weather">update location</button> 
+    <div class="city" id="city">weather in </div>
+  <div class="weatherNow">
+  It looks like you
+  </div>
+  <div class="temp">
+  you haven't added
+  </div>
+ <div class="maxTemp">
+your location yet.
+  </div>
+ <div class="minTemp">
+Click the button
+  </div>
+  <div class="precipitation">
+  at the top to
+  </div>
+  <div class="wind">
+  update.
+  </div>
+  <a href="profile.html"><i class="fa fa-3x  fa-user"></i></a> 
+  </div></div>
 
-  test
-	<script src="index.js"></script>
+
+<header class="site-header">
+  <div class="site-identity">
+    <a href="index.html"><img  class="logo" src="sos_logo.png"></a>
+
+  </div>  
+</header>
+
+<div class="container-fluid content col-9 offset-3">
+    <h2 class="sectionHeading"> User Preferences</h2>
+    <div class="search">
+    <h5 class="prefHeading">Location</h5>
+    <input type="text" class="search-bar city-bar" placeholder="Enter your city"> 
+    <input type="text" class="search-bar country-bar" placeholder="Enter your country">
+    
+    <!-- "someID" for potential future dynamic checkboxes --> 
+    <div id="someId"></div>
+    <button> submit</button>
+    <button class="save"> save</button>
+    </div>
+      <div class="diet-preferences">
+      <h5 class="prefHeading"> Diet Preferences</h5>
+      <div id="diet-container" class="option-container ">
+      </div>
+      </div>
+      <div class="health-preferences">
+          <h5 class="prefHeading"> Health Preferences</h5>
+            <div id="health-container" class="option-container ">
+            </div>
+
+      </div>
+      <div class="cuisine-preferences">
+        <h5 class="prefHeading"> Cuisine Preferences</h5>
+          <div id="cuisine-container" class="option-container ">
+          </div>
+        
+      </div><button id="save-diet" >Save</button>
+</div>
+
+
+	
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./js/profile.js"></script>
   </body>
 </html>
