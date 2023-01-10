@@ -155,6 +155,9 @@ btn.addEventListener('click', (event) => {
 
 
 // weather & location APIs
+
+let userTemp = localStorage.getItem("temp")
+
 let userLocation = {
     // case insensitive filteration of the api city search response to yield single city in given country.
     countryFilter: function (userCountry, responseArray) {
@@ -301,7 +304,6 @@ setTimeout(() => {
 let userDiet = localStorage.getItem("dietQuery")
 let userHealth = localStorage.getItem("healthQuery")
 let userCuisine = localStorage.getItem("cuisineQuery")
-let userTemp = localStorage.getItem("temp")
 
 let recipe = {
 
