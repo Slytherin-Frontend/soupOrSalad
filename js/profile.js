@@ -42,6 +42,10 @@ let healthPreferences =
 let dietPreferences =
     { 'Balanced': 'balanced', 'High-Fiber': 'high-fiber', 'High-Protein': 'high-protein', 'Low-Carb': 'low-carb', 'Low-Fat': 'low-fat', 'Low-Sodium': 'low-sodium', }
 
+// cuisine preference list
+let cuisinePreferences =
+    { 'american': 'american', 'asian': 'asian', 'british': 'british', 'caribbean': 'caribbean', 'central europe': 'central%europe', 'chinese': 'chinese', 'eastern europe': 'eastern%europe', 'french': 'french', 'greek': 'greek', 'indian': 'indian', 'italian': 'italian', 'japanese': 'japanese', 'korean': 'korean', 'kosher': 'kosher', 'mediterranean': 'mediterranean', 'mexican': 'mexican', 'middle eastern': 'middle%eastern', 'nordic': 'nordic', 'south american': 'south%american', 'south east asian': 'south%east%asian', 'world': 'world', }
+
 
 // dynamically creating checkboxes once page loads
 // diet
@@ -62,7 +66,7 @@ $(document).ready(function () {
 //health
 $(document).ready(function () {
     $('#edit-diet').ready(function () {
-        var list = ['Alcohol-Cocktail','Alcohol-Free','Celery-Free','Crustcean-Free','Dairy-Free','DASH','Egg-Free','Fish-Free','FODMAP-Free','Gluten-Free','Immuno-Supportive','Keto-Friendly','Kidney-Friendly','Kosher','Low Potassium','Low Sugar','Lupine-Free','Mediterranean','Mollusk-Free','Mustard-Free','No oil added','Paleo','Peanut-Free','Pescatarian','Pork-Free','Red-Meat-Free','Sesame-Free','Shellfish-Free','Soy-Free','Sugar-Conscious','Sulfite-Free','Tree-Nut-Free','Vegan','Vegetarian','Wheat-Free',];
+        var list = ['Alcohol-Cocktail', 'Alcohol-Free', 'Celery-Free', 'Crustcean-Free', 'Dairy-Free', 'DASH', 'Egg-Free', 'Fish-Free', 'FODMAP-Free', 'Gluten-Free', 'Immuno-Supportive', 'Keto-Friendly', 'Kidney-Friendly', 'Kosher', 'Low Potassium', 'Low Sugar', 'Lupine-Free', 'Mediterranean', 'Mollusk-Free', 'Mustard-Free', 'No oil added', 'Paleo', 'Peanut-Free', 'Pescatarian', 'Pork-Free', 'Red-Meat-Free', 'Sesame-Free', 'Shellfish-Free', 'Soy-Free', 'Sugar-Conscious', 'Sulfite-Free', 'Tree-Nut-Free', 'Vegan', 'Vegetarian', 'Wheat-Free',];
         for (let value of list) {
             $('#health-container')
                 .append(`<div class="preference-checkbox"><input type="checkbox" id="${value}" name="health" class"preference" value="${healthPreferences[value]}">`)
@@ -76,10 +80,10 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('.diet-preferences').ready(function () {
-        var list = ['american','asian','british','caribbean','central europe','chinese','eastern europe','french','greek','indian','italian','japanese','korean','kosher','mediterranean','mexican','middle eastern','nordic','south american','south east asian','world',];
+        var list = ['american', 'asian', 'british', 'caribbean', 'central europe', 'chinese', 'eastern europe', 'french', 'greek', 'indian', 'italian', 'japanese', 'korean', 'kosher', 'mediterranean', 'mexican', 'middle eastern', 'nordic', 'south american', 'south east asian', 'world',];
         for (let value of list) {
             $('#cuisine-container')
-                .append(`<div class="preference-checkbox"><input type="checkbox" id="${value}" name="cuisine" class"preference" value="${value}">`)
+                .append(`<div class="preference-checkbox"><input type="checkbox" id="${value}" name="cuisine" class"preference" value="${cuisinePreferences[value]}">`)
                 .append(`<label for="${value}">${value}</label></div>`);
         }
 
@@ -133,7 +137,7 @@ btn.addEventListener('click', (event) => {
     let checkboxes = document.querySelectorAll('input[name="cuisine"]:checked');
     let queryVal = "";
     checkboxes.forEach((checkbox) => {
-        queryVal += "&cuisine=" +  checkbox.value;
+        queryVal += "&cuisine=" + checkbox.value;
     });
     localStorage.setItem('cuisineQuery', queryVal);
 });
@@ -244,7 +248,7 @@ let weather = {
 
         console.log(time.slice(11, 16), temperature, windspeed, temperature_2m_max[0], temperature_2m_min[0], precipitation_sum[0]);
         console.log(data);
-        localStorage.setItem("temp",temperature_2m_max[0])
+        localStorage.setItem("temp", temperature_2m_max[0])
         document.querySelector(".city").innerHTML = "weather in:\n" + userLocName;
         document.querySelector(".weatherNow").innerHTML = "weather now:\n" + weatherCodes[weathercode];
         document.querySelector(".temp").innerHTML = "temp now:\n" + temperature + "°C";
@@ -253,14 +257,28 @@ let weather = {
         document.querySelector(".precipitation").innerHTML = "total rain today:\n" + precipitation_sum[0] + "mm";
         document.querySelector(".wind").innerHTML = "max windspeed:\n" + windspeed + "km/h";
     },
+    soupSalad: function () {
+        console.log(typeof userTemp)
+        // "+" turns the temp from a string into a number which can be used for comparson
+        if (+userTemp > 18) {
+            localStorage.setItem("choice", "SALAD")
+            localStorage.setItem("choiceQuery", "&dishType=salad")
+            
+        } else {
+            localStorage.setItem("choice", "SOUP")
+            localStorage.setItem("choiceQuery", "&dishType=soup")
+        }
 
-
+    }
 }
 
 
 // automatically kicks off the fetch weather function so the info is populated. if there is no stored data, a message is shown to direct user to the update location button
 window.onload = function () {
     weather.fetchWeather();
+}
+window.onload = function () {
+    weather.soupSalad();
 }
 
 document.querySelector(".search button").addEventListener("click", function () {
@@ -290,25 +308,12 @@ let userCuisine = localStorage.getItem("cuisineQuery")
 let userTemp = localStorage.getItem("temp")
 
 let recipe = {
-    
-    fetchRecipe: function(){
-        fetch("https://api.edamam.com/api/recipes/v2?type=public&app_id=5c1f4878&app_key=d220cee0e567234581f36d1404f5f7b3"+userDiet+userHealth+userCuisine+this.soupSalad()).then((response) => response.json()).then((data) => console.log(data));
-},
-    soupSalad: function(){
-        console.log(typeof userTemp)
-        choice= "&dishType="
-        // "+" turns the temp from a string into a number which can be used for comparson
-        if(+userTemp >18){
-            choice +="salad"
-            localStorage.setItem("choice","SALAD")
-            return choice
-        } else{
-            choice +="soup"
-            localStorage.setItem("choice","SOUP")
-            return choice
-        }
 
-    }
+    fetchRecipe: function () {
+        fetch("https://api.edamam.com/api/recipes/v2?type=public&app_id=5c1f4878&app_key=d220cee0e567234581f36d1404f5f7b3" + userDiet + userHealth + userCuisine + this.soupSalad()).then((response) => response.json()).then((data) => console.log(data));
+    },
+
 
 
 }
+
