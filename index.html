@@ -46,8 +46,9 @@
                         <div class="form-group mx-md-3 mb-2">
                             <label for="inputRecipe" class="sr-only">Recipe</label>
                             <input class="form-control text-center" id="input-box" type="text" placeholder="Enter a keyword">
+                            <input id="find-recipe" class="text-center btn btn-secondary"type="submit" value="search">
                         </div>
-                        <input id="find-recipe" type="submit" value="search">
+                        
                     </form>
                 </div>
             </div>
@@ -59,7 +60,8 @@
                     <br>
                     <div class="jumbotron jumbotron-fluid text-center">
                         <div class="container">
-                            <div class="lead text-center">
+                            <div class="lead text-center" id="recipe-container">
+                        
                             </div>
                         </div>
                     </div>
@@ -67,9 +69,9 @@
             </div>
         </div>
     </div>
-    <script src="./js/main.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
