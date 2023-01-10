@@ -155,6 +155,9 @@ btn.addEventListener('click', (event) => {
 
 
 // weather & location APIs
+
+let userTemp = localStorage.getItem("temp")
+
 let userLocation = {
     // case insensitive filteration of the api city search response to yield single city in given country.
     countryFilter: function (userCountry, responseArray) {
@@ -271,20 +274,19 @@ let weather = {
 
 
 // automatically kicks off the fetch weather function so the info is populated. if there is no stored data, a message is shown to direct user to the update location button
-window.onload = function () {
+$(window).on('load', function() {
     weather.fetchWeather();
-}
-window.onload = function () {
     weather.soupSalad();
-}
+   });
+
 
 document.querySelector(".search button").addEventListener("click", function () {
     userLocation.search();
 })
 
-document.querySelector(".search button").addEventListener("click", function () {
-    document.querySelector(".resultList").innerHTML = "Search result:"
-})
+// document.querySelector(".search button").addEventListener("click", function () {
+//     document.querySelector(".resultList").innerHTML = "Search result:"
+// })
 
 document.querySelector(".save").addEventListener("click", function () {
     location.reload()
@@ -302,7 +304,6 @@ setTimeout(() => {
 let userDiet = localStorage.getItem("dietQuery")
 let userHealth = localStorage.getItem("healthQuery")
 let userCuisine = localStorage.getItem("cuisineQuery")
-let userTemp = localStorage.getItem("temp")
 
 let recipe = {
 
