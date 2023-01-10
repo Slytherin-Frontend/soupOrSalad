@@ -282,9 +282,7 @@ document.querySelector(".search button").addEventListener("click", function () {
     userLocation.search();
 })
 
-document.querySelector(".search button").addEventListener("click", function () {
-    document.querySelector(".resultList").innerHTML = "Search result:"
-})
+
 
 document.querySelector(".save").addEventListener("click", function () {
     location.reload()
