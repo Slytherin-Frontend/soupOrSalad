@@ -290,7 +290,7 @@ document.querySelector(".search button").addEventListener("click", function () {
 })
 
 document.querySelector(".save").addEventListener("click", function () {
-    location.reload()
+    weather.fetchWeather()
 })
 
 
