@@ -271,12 +271,10 @@ let weather = {
 
 
 // automatically kicks off the fetch weather function so the info is populated. if there is no stored data, a message is shown to direct user to the update location button
-window.onload = function () {
-    weather.fetchWeather();
-}
-window.onload = function () {
-    weather.soupSalad();
-}
+
+weather.fetchWeather()
+weather.soupSalad()
+
 
 document.querySelector(".search button").addEventListener("click", function () {
     userLocation.search();
@@ -285,7 +283,7 @@ document.querySelector(".search button").addEventListener("click", function () {
 
 
 document.querySelector(".save").addEventListener("click", function () {
-    weather.fetchWeather()
+    location.reload()
 })
 
 
