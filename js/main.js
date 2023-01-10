@@ -21,19 +21,23 @@ let cusineQuery = localStorage.getItem('cusineQuery')|| ''
 console.log(cusineQuery);
 let healthQuery = localStorage.getItem('healthQuery')|| ''
 let dietQuery = localStorage.getItem('dietQuery')|| ''
- var queryURL = `https://api.edamam.com/api/recipes/v2?type=public&q=${inputText}&app_id=${id}&app_key=${key}&from=0&to=20${dietQuery}${healthQuery}${cusineQuery}&imageSize=REGULAR`;
+ var queryURL = `https://api.edamam.com/api/recipes/v2?type=public&q=${inputText}&app_id=${id}&app_key=${key}&from=0&to=30${dietQuery}${healthQuery}${cusineQuery}&imageSize=REGULAR`;
 
  $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    // console.log(response)
+    console.log(response)
     // console.log(response.hits[0].recipe.image);
     let childNode = `<div class="card-group"><div class="card">
 <img class="card-img-top" src="${response.hits[0].recipe.image}"
     alt="Card image cap">
 <div class="card-body">
-    <h5 class="card-title" id="salad5">title</h5>
+    <h5 class="card-title">${response.hits[0].recipe.label}</h5>
+    <div class="text-center" id="meal-type">Meal type: ${response.hits[0].recipe.mealType}</div>
+    <div class ="text-center" id="diet-labels"> ${response.hits[0].recipe.dietLabels}</div>
+    <div class ="text-center" id="ingredients" font-size:"1px"><h6>Ingredients:</h6> ${response.hits[0].recipe.ingredientLines}</div>
+    <br>
     <button type="button" class="btn btn-secondary" data-toggle="modal"
         data-target=".bd-example-modal-lg">More
         details</button>
@@ -43,7 +47,11 @@ let dietQuery = localStorage.getItem('dietQuery')|| ''
 <img class="card-img-top" src="${response.hits[1].recipe.image}"
     alt="Card image cap">
 <div class="card-body">
-    <h5 class="card-title" id="salad5">title</h5>
+    <h5 class="card-title" id="salad5">${response.hits[1].recipe.label}</h5>
+    <div class="text-center" id="meal-type">Meal type: ${response.hits[1].recipe.mealType}</div>
+    <div class ="text-center" id="diet-labels"> ${response.hits[1].recipe.dietLabels}</div>
+    <div class ="text-center" id="ingredients" font-size:"1px"><h6>Ingredients:</h6> ${response.hits[1].recipe.ingredientLines}</div>
+    <br>
     <button type="button" class="btn btn-secondary" data-toggle="modal"
         data-target=".bd-example-modal-lg">More
         details</button>
@@ -53,7 +61,11 @@ let dietQuery = localStorage.getItem('dietQuery')|| ''
 <img class="card-img-top" src="${response.hits[2].recipe.image}"
     alt="Card image cap">
 <div class="card-body">
-    <h5 class="card-title" id="salad5">title</h5>
+    <h5 class="card-title" id="salad5">${response.hits[2].recipe.label}</h5>
+    <div class="text-center" id="meal-type">Meal type: ${response.hits[2].recipe.mealType}</div>
+    <div class ="text-center" id="diet-labels"> ${response.hits[2].recipe.dietLabels}</div>
+    <div class ="text-center" id="ingredients" font-size:"1px"><h6>Ingredients:</h6> ${response.hits[2].recipe.ingredientLines}</div>
+    <br>
     <button type="button" class="btn btn-secondary" data-toggle="modal"
         data-target=".bd-example-modal-lg">More
         details</button>
@@ -64,17 +76,25 @@ let dietQuery = localStorage.getItem('dietQuery')|| ''
 <img class="card-img-top" src="${response.hits[3].recipe.image}"
     alt="Card image cap">
 <div class="card-body">
-    <h5 class="card-title" id="salad5">title</h5>
+    <h5 class="card-title" id="salad5">${response.hits[3].recipe.label}</h5>
+    <div class="text-center" id="meal-type">Meal type: ${response.hits[3].recipe.mealType}</div>
+    <div class ="text-center" id="diet-labels"> ${response.hits[3].recipe.dietLabels}</div>
+    <div class ="text-center" id="ingredients" font-size:"1px"><h6>Ingredients:</h6> ${response.hits[3].recipe.ingredientLines}</div>
+    <br>
     <button type="button" class="btn btn-secondary" data-toggle="modal"
         data-target=".bd-example-modal-lg">More
         details</button>
 </div>
 </div>
 <div class="card">
-<img class="card-img-top" src="${response.hits[4].recipe.image}"
+<img class="card-img-top" src="${response.hits[9].recipe.image}"
     alt="Card image cap">
 <div class="card-body">
-    <h5 class="card-title" id="salad5">title</h5>
+    <h5 class="card-title" id="salad5">${response.hits[9].recipe.label}</h5>
+    <div class="text-center" id="meal-type">Meal type: ${response.hits[9].recipe.mealType}</div>
+    <div class ="text-center" id="diet-labels"> ${response.hits[9].recipe.dietLabels}</div>
+    <div class ="text-center" id="ingredients" font-size:"1px"><h6>Ingredients:</h6> ${response.hits[9].recipe.ingredientLines}</div>
+    <br>
     <button type="button" class="btn btn-secondary" data-toggle="modal"
         data-target=".bd-example-modal-lg">More
         details</button>
@@ -84,7 +104,11 @@ let dietQuery = localStorage.getItem('dietQuery')|| ''
 <img class="card-img-top" src="${response.hits[5].recipe.image}"
     alt="Card image cap">
 <div class="card-body">
-    <h5 class="card-title" id="salad5">title</h5>
+    <h5 class="card-title" id="salad5">${response.hits[5].recipe.label}</h5>
+    <div class="text-center" id="meal-type">Meal type: ${response.hits[5].recipe.mealType}</div>
+    <div class ="text-center" id="diet-labels"> ${response.hits[5].recipe.dietLabels}</div>
+    <div class ="text-center" id="ingredients" font-size:"1px"><h6>Ingredients:</h6> ${response.hits[5].recipe.ingredientLines}</div>
+    <br>
     <button type="button" class="btn btn-secondary" data-toggle="modal"
         data-target=".bd-example-modal-lg">More
         details</button>
