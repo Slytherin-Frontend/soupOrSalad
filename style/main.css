@@ -15,10 +15,10 @@ head > nav {
 }
 
 /* Sidebar links */
-.sidebar li {
+.sidebar li{
     display: block;
     color: black;
-    padding: 16px;
+    padding: 7px;
     text-decoration: none;
 }
 
@@ -61,6 +61,8 @@ div.content {
 
     .sidebar li {
         float: left;
+        justify-content: center;
+        align-items: center;
     }
 
     div.content {

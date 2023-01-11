@@ -36,7 +36,7 @@ console.log(storageAvailable('sessionStorage'))
 
 // health preferences list
 let healthPreferences =
-    { 'Alcohol-Cocktail': 'alcohol-cocktail', 'Alcohol-Free': 'alcohol-free', 'Celery-Free': 'celery-free', 'Crustcean-Free': 'crustacean-free', 'Dairy-Free': 'dairy-free', 'DASH': 'DASH', 'Egg-Free': 'egg-free', 'Fish-Free': 'fish-free', 'FODMAP-Free': 'fodmap-free', 'Gluten-Free': 'gluten-free', 'Immuno-Supportive': 'immuno-supportive', 'Keto-Friendly': 'keto-friendly', 'Kidney-Friendly': 'kidney-friendly', 'Kosher': 'kosher', 'Low Potassium': 'low-potassium', 'Low Sugar': 'low-sugar', 'Lupine-Free': 'lupine-free', 'Mediterranean': 'Mediterranean', 'Mollusk-Free': 'mollusk-free', 'Mustard-Free': 'mustard-free', 'No oil added': 'No-oil-added', 'Paleo': 'paleo', 'Peanut-Free': 'peanut-free', 'Pescatarian': 'pecatarian', 'Pork-Free': 'pork-free', 'Red-Meat-Free': 'red-meat-free', 'Sesame-Free': 'sesame-free', 'Shellfish-Free': 'shellfish-free', 'Soy-Free': 'soy-free', 'Sugar-Conscious': 'sugar-conscious', 'Sulfite-Free': 'sulfite-free', 'Tree-Nut-Free': 'tree-nut-free', 'Vegan': 'vegan', 'Vegetarian': 'vegetarian', 'Wheat-Free': 'wheat-free', }
+    { 'Alcohol-Free': 'alcohol-free', 'Celery-Free': 'celery-free', 'Crustcean-Free': 'crustacean-free', 'Dairy-Free': 'dairy-free', 'DASH': 'DASH', 'Egg-Free': 'egg-free', 'Fish-Free': 'fish-free', 'FODMAP-Free': 'fodmap-free', 'Gluten-Free': 'gluten-free', 'Immuno-Supportive': 'immuno-supportive', 'Keto-Friendly': 'keto-friendly', 'Kidney-Friendly': 'kidney-friendly', 'Kosher': 'kosher', 'Low Potassium': 'low-potassium', 'Low Sugar': 'low-sugar', 'Lupine-Free': 'lupine-free', 'Mediterranean': 'Mediterranean', 'Mollusk-Free': 'mollusk-free', 'Mustard-Free': 'mustard-free', 'No oil added': 'No-oil-added', 'Paleo': 'paleo', 'Peanut-Free': 'peanut-free', 'Pescatarian': 'pecatarian', 'Pork-Free': 'pork-free', 'Red-Meat-Free': 'red-meat-free', 'Sesame-Free': 'sesame-free', 'Shellfish-Free': 'shellfish-free', 'Soy-Free': 'soy-free', 'Sugar-Conscious': 'sugar-conscious', 'Sulfite-Free': 'sulfite-free', 'Tree-Nut-Free': 'tree-nut-free', 'Vegan': 'vegan', 'Vegetarian': 'vegetarian', 'Wheat-Free': 'wheat-free', }
 
 // diet preferences list
 let dietPreferences =
@@ -66,7 +66,7 @@ $(document).ready(function () {
 //health
 $(document).ready(function () {
     $('#edit-diet').ready(function () {
-        var list = ['Alcohol-Cocktail', 'Alcohol-Free', 'Celery-Free', 'Crustcean-Free', 'Dairy-Free', 'DASH', 'Egg-Free', 'Fish-Free', 'FODMAP-Free', 'Gluten-Free', 'Immuno-Supportive', 'Keto-Friendly', 'Kidney-Friendly', 'Kosher', 'Low Potassium', 'Low Sugar', 'Lupine-Free', 'Mediterranean', 'Mollusk-Free', 'Mustard-Free', 'No oil added', 'Paleo', 'Peanut-Free', 'Pescatarian', 'Pork-Free', 'Red-Meat-Free', 'Sesame-Free', 'Shellfish-Free', 'Soy-Free', 'Sugar-Conscious', 'Sulfite-Free', 'Tree-Nut-Free', 'Vegan', 'Vegetarian', 'Wheat-Free',];
+        var list = ['Alcohol-Free', 'Celery-Free', 'Crustcean-Free', 'Dairy-Free', 'DASH', 'Egg-Free', 'Fish-Free', 'FODMAP-Free', 'Gluten-Free', 'Immuno-Supportive', 'Keto-Friendly', 'Kidney-Friendly', 'Kosher', 'Low Potassium', 'Low Sugar', 'Lupine-Free', 'Mediterranean', 'Mollusk-Free', 'Mustard-Free', 'No oil added', 'Paleo', 'Peanut-Free', 'Pescatarian', 'Pork-Free', 'Red-Meat-Free', 'Sesame-Free', 'Shellfish-Free', 'Soy-Free', 'Sugar-Conscious', 'Sulfite-Free', 'Tree-Nut-Free', 'Vegan', 'Vegetarian', 'Wheat-Free',];
         for (let value of list) {
             $('#health-container')
                 .append(`<div class="preference-checkbox"><input type="checkbox" id="${value}" name="health" class"preference" value="${healthPreferences[value]}">`)
@@ -248,7 +248,15 @@ let weather = {
 
         console.log(time.slice(11, 16), temperature, windspeed, temperature_2m_max[0], temperature_2m_min[0], precipitation_sum[0]);
         console.log(data);
-        localStorage.setItem("temp", temperature_2m_max[0])
+        localStorage.setItem("temp", temperature_2m_max[0]);
+        //local storage Crystal edit
+        localStorage.setItem("city", userLocName);
+        localStorage.setItem("weatherNow", weatherCodes[weathercode]);
+        localStorage.setItem("tempNow", temperature);
+        localStorage.setItem("tempMin",temperature_2m_min[0]);
+        localStorage.setItem("precipitation",precipitation_sum[0]);
+        localStorage.setItem("windSpd",windspeed);
+        //end of local storage edits
         document.querySelector(".city").innerHTML = "weather in:\n" + userLocName;
         document.querySelector(".weatherNow").innerHTML = "weather now:\n" + weatherCodes[weathercode];
         document.querySelector(".temp").innerHTML = "temp now:\n" + temperature + "°C";

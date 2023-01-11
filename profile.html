@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Profile Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
@@ -17,7 +17,7 @@
  
   
   <div class="sidebar">
-  <div class="weather">  <button href="profile.html" class="weather">update location</button> 
+  <div class="weather">  <button href="profile.html" class="weather btn btn-secondary">update location</button> 
     <div class="city" id="city">weather in </div>
   <div class="weatherNow">
   It looks like you
@@ -43,7 +43,7 @@ Click the button
 
 <header class="site-header">
   <div class="site-identity">
-    <a href="main.html"><img  class"logo" src="./images/SoS logo.png"></a>
+    <a href="index.html"><img  class="logo" src="./images/SoS logo.png"></a>
 
   </div>  
 </header>
@@ -54,13 +54,15 @@ Click the button
     <h5 class="prefHeading">Location</h5>
     <input type="text" class="search-bar city-bar" placeholder="Enter your city"> 
     <input type="text" class="search-bar country-bar" placeholder="Enter your country">
-    
+  
     <!-- "someID" for potential future dynamic checkboxes --> 
-    <div id="someId"></div>
-    <button> submit</button>
-    <button class="save"> save</button>
+    <div id="someId"><br></div>
+    <button class="btn btn-secondary"> submit</button>
+    <button class="save btn btn-secondary"> save</button>
     </div>
+      
       <div class="diet-preferences">
+      
       <h5 class="prefHeading"> Diet Preferences</h5>
       <div id="diet-container" class="option-container ">
       </div>
@@ -76,7 +78,10 @@ Click the button
           <div id="cuisine-container" class="option-container ">
           </div>
         
-      </div><button id="save-diet" >Save</button>
+      </div>
+      <div><b><i>*Only select ONE for each preference category</i></b></div>
+      <button class="btn btn-secondary" id="save-diet" >Save</button>
+      
 </div>
 
 
