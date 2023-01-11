@@ -53,6 +53,20 @@ Here they will be able to select their location, and the option for selecting di
 After selecting the "save" button, they can go back to the home page and enter an ingredient to see a list of soups or salads that use the ingredient typed by the user:
 <img src="./Images/Results.png">
 
+Challenges
+1. Coordination of tasks:
+- Group members weren;t clear on what to do, so the same task was carried out by 32 members at once.
+- Group members had different backgrounds and hence some found tasks very challenging and took more time to meet a goal than others would have.
+
+2. Familiarity with tools:
+- After discussing different task-assignment and communication tools, team members would have to also spend time learning how to use the chosen tools.
+- Significant time was also spent on leaning about how to used chosen APIs and reading their documentation
+
+3. Time:
+- Each member would have to explain changes they made, reasoning for it, and how it was done to others which consumed a lot of time
+- Members would be late to meeting due to external conditions which cut off contact time in class
+- As a team Members would all have to agree on decisions such as defult setup for all pages, logo, task assignment which would result on less time being left for more detailed tasks.
+
 Github url:
 https://github.com/Slytherin-Frontend/soupOrSalad
 
