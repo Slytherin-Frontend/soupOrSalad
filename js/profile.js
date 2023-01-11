@@ -248,7 +248,14 @@ let weather = {
 
         console.log(time.slice(11, 16), temperature, windspeed, temperature_2m_max[0], temperature_2m_min[0], precipitation_sum[0]);
         console.log(data);
-        localStorage.setItem("temp", temperature_2m_max[0])
+        localStorage.setItem("temp", temperature_2m_max[0]);
+        //local storage Crystal edit
+        localStorage.setItem("city", userLocName);
+        localStorage.setItem("tempNow", temperature);
+        localStorage.setItem("tempMin",temperature_2m_min[0]);
+        localStorage.setItem("precipitaion",precipitation_sum[0]);
+        localStorage.setItem("windSpd",windspeed);
+        //end of local storage edits
         document.querySelector(".city").innerHTML = "weather in:\n" + userLocName;
         document.querySelector(".weatherNow").innerHTML = "weather now:\n" + weatherCodes[weathercode];
         document.querySelector(".temp").innerHTML = "temp now:\n" + temperature + "°C";
