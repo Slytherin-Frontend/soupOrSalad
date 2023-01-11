@@ -18,7 +18,7 @@ head > nav {
 .sidebar li{
     display: block;
     color: black;
-    padding: 7px;
+    padding: 10px;
     text-decoration: none;
 }
 

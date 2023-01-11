@@ -6,13 +6,17 @@ var recipeContainer = $('#recipe-container');
 const weatherLoc = $('#weather-location');
 
 //side bar info using local storage data
-weatherLoc.text(localStorage.getItem('placeName'));
-$('#weather-info').text(localStorage.getItem('weatherNow'));
-$('#weather-temp').text(localStorage.getItem('tempNow') + "°C");
-$('#max-temp').text(localStorage.getItem('temp') + "°C");
-$('#min-temp').text(localStorage.getItem('tempMin') + "°C");
-$('#rain').text(localStorage.getItem('precipitation') + "mm");
-$('#wind').text(localStorage.getItem('windSpd') + "km/h");
+if ((localStorage.getItem('placeName')===null)){
+    
+}else {
+weatherLoc.text("weather in:\n" + localStorage.getItem('placeName'));
+$('#weather-info').text("weather now:\n" + localStorage.getItem('weatherNow'));
+$('#weather-temp').text("temp now:\n" + localStorage.getItem('tempNow') + "°C");
+$('#max-temp').text("max temp today:\n" + localStorage.getItem('temp') + "°C");
+$('#min-temp').text("min temp today:\n" + localStorage.getItem('tempMin') + "°C");
+$('#rain').text("total rain:\n" + localStorage.getItem('precipitation') + "mm");
+$('#wind').text("max wind speed:\n" + localStorage.getItem('windSpd') + "km/h");
+};
 
 // on click function 
 recipeBtn.addEventListener('click', function (event) {
