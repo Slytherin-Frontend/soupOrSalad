@@ -13,7 +13,7 @@ recipeBtn.addEventListener('click', function(event){
     
     const id = "1b0fa889";
 
-    const key = "c7c8044eb4a22528a8ccc3bbdee4c57b";
+    const key = "f1142d5c27142abbfe9a6402558b265b";
 
     const recipeContainer = $('#recipe-containter');
 
