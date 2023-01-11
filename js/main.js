@@ -3,14 +3,25 @@ var recipeBtn = document.querySelector('#find-recipe');
 
 var recipeContainer = $('#recipe-container');
 
+const weatherLoc = $('#weather-location');
+
+//side bar info using local storage data
+weatherLoc.text(localStorage.getItem('placeName'));
+$('#weather-info').text(localStorage.getItem('weatherNow'));
+$('#weather-temp').text(localStorage.getItem('tempNow') + "°C");
+$('#max-temp').text(localStorage.getItem('temp') + "°C");
+$('#min-temp').text(localStorage.getItem('tempMin') + "°C");
+$('#rain').text(localStorage.getItem('precipitation') + "mm");
+$('#wind').text(localStorage.getItem('windSpd') + "km/h");
+
 // on click function 
-recipeBtn.addEventListener('click', function(event){
+recipeBtn.addEventListener('click', function (event) {
     event.preventDefault();
     // console.log('submitted');
 
     var inputText = document.querySelector('#input-box').value;
     // console.log(inputText);
-    
+
     const id = "1b0fa889";
 
     const key = "f1142d5c27142abbfe9a6402558b265b";
@@ -18,12 +29,12 @@ recipeBtn.addEventListener('click', function(event){
     const recipeContainer = $('#recipe-containter');
 
     // obtain local storage query key-value pairs
-    let cusineQuery = localStorage.getItem('cusineQuery')|| ''
+    let cusineQuery = localStorage.getItem('cusineQuery') || ''
     console.log(cusineQuery);
-    let healthQuery = localStorage.getItem('healthQuery')|| ''
-    let dietQuery = localStorage.getItem('dietQuery')|| ''
-    let choiceQuery = localStorage.getItem('choiceQuery')||''
-   
+    let healthQuery = localStorage.getItem('healthQuery') || ''
+    let dietQuery = localStorage.getItem('dietQuery') || ''
+    let choiceQuery = localStorage.getItem('choiceQuery') || ''
+
     // construct query URL
     var queryURL = `https://api.edamam.com/api/recipes/v2?type=public&q=${inputText}&app_id=${id}&app_key=${key}&from=0&to=20${dietQuery}${healthQuery}${cusineQuery}${choiceQuery}&imageSize=REGULAR`;
 
@@ -39,13 +50,13 @@ recipeBtn.addEventListener('click', function(event){
         //shuffle 0 - 20
         var arr0_19 = [...Array(20).keys()];
         shuffle(arr0_19);
-        
+
         var gpCards = ["", ""]
         var tmpStr = ""
         var newIdx = 0
 
         //for loop creating dynamic shuffle cards
-        for (let j=0; j<6; j++){
+        for (let j = 0; j < 6; j++) {
             newIdx = arr0_19[j];
             tmpStr = `<div class="card">
             <img class="card-img-top" src="${response.hits[newIdx].recipe.image}"
@@ -61,48 +72,35 @@ recipeBtn.addEventListener('click', function(event){
                     details</a>
             </div>
             </div>`
-            if (j%2 === 0) 
+            if (j % 2 === 0)
                 gpCards[0] += tmpStr;
-            else 
+            else
                 gpCards[1] += tmpStr;
-            
+
         }
-        let childNode = '<div class="card-group">'+gpCards[0]+
-            '</div><div class="card-group">'+gpCards[1]+'</div>'
+        let childNode = '<div class="card-group">' + gpCards[0] +
+            '</div><div class="card-group">' + gpCards[1] + '</div>'
         //append innerHTML to be childNode
         document.querySelector('#recipe-container').innerHTML = childNode;
         // recipeContainer.html(childNode);
-        });
+    });
 });
 
 // shuffle array function
 function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
+    let currentIndex = array.length, randomIndex;
+
     // While there remain elements to shuffle.
     while (currentIndex != 0) {
-  
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
     }
-  
+
     return array;
 }
-
-const weatherLoc = $('#weather-location')
-weatherLoc.text(localStorage.getItem('placeName'));
-$('#weather-info').text(localStorage.getItem('weatherNow'));
-$('#weather-temp').text(localStorage.getItem('tempNow') + "°C");
-$('#max-temp').text(localStorage.getItem('temp')+ "°C");
-$('#min-temp').text(localStorage.getItem('tempMin') + "°C");
-$('#rain').text(localStorage.getItem('precipitation')+ "mm");
-$('#wind').text(localStorage.getItem('windSpd')+ "km/h");
-// // $('#weather-averageTemp').innerHTML = localStorage.getItem('tempNow') || '';
-// $('#weather-temp').innerHTML =localStorage.getItem
-// $('#weather-rain').innerHTML =localStorage.getItem('precipitation') || '';
-// $('#weather-wind').innerHTML =localStorage.getItem('windSpd') || '';
