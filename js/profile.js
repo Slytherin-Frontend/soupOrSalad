@@ -251,9 +251,10 @@ let weather = {
         localStorage.setItem("temp", temperature_2m_max[0]);
         //local storage Crystal edit
         localStorage.setItem("city", userLocName);
+        localStorage.setItem("weatherNow", weatherCodes[weathercode]);
         localStorage.setItem("tempNow", temperature);
         localStorage.setItem("tempMin",temperature_2m_min[0]);
-        localStorage.setItem("precipitaion",precipitation_sum[0]);
+        localStorage.setItem("precipitation",precipitation_sum[0]);
         localStorage.setItem("windSpd",windspeed);
         //end of local storage edits
         document.querySelector(".city").innerHTML = "weather in:\n" + userLocName;
