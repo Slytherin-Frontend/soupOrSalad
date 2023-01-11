@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color:  #1E429D;
+    background-color:  #f1f1f1;
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -14,13 +14,13 @@
   /* Sidebar links */
   .sidebar div {
     display: block;
-    color: white;
+    color: black;
     padding: 16px;
     text-decoration: none;
   }
   .sidebar a {
     display: block;
-    color: white;
+    color: #c8c8f6;
     padding: 16px;
     text-decoration: underline;
   }
