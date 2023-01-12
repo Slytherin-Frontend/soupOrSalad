@@ -1,15 +1,16 @@
 # slytherinWebApp
-Project Title: SOUP or SALAD
+Project title: SOUP or SALAD
 contributers: Moral, Victoria, Crystal
 
 Project Description:
-Soup or Salad is a fun suggestion app providing a list of soup or salad recipes depending on weather conditions in the user's location. The user will be able to enter their location (which will be saved in the client-side and can be changed at any time), a dietary profile, and 1-2 ingredients they currently have or are interested in using; and the app will perform a search and return 5-8 soups/salads.
+Soup or Salad is a fun suggestion web-based app providing a list of soup or salad recipes depending on weather conditions in the user's location. The user will be able to enter their location (which will be saved in the client-side and can be changed at any time), as well as an optional dietary profile, and 1-2 ingredients they currently have or are interested in using. The app will then perform a search and return 5-8 soups/salads.
 
-After researching and looking into 2 APIs, we decided to use the ones below sisnce they are both free and easy to use on their own:
+After researching and looking into APIs, we decided to use the ones below since they are both free and have straight forward instructions:
+
 Weather API:
 https://open-meteo.com/
 
-Geograohic location API:
+Geographic location API:
 https://geocoding-api.open-meteo.com/
 
 Recipe API:
