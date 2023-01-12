@@ -24,6 +24,10 @@ head > nav {
     padding-right: 1rem;
 }
 
+.navbar-brand img{
+    padding-bottom: 4rem;
+}
+
 /* Active/current link */
 .sidebar a.active {
     color: white;
