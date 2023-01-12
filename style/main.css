@@ -6,8 +6,8 @@ head > nav {
 /* The side bar menu */
 .sidebar {
     margin: 0;
-    padding: 0;
     width: 200px;
+    padding-left: 1rem; padding-right: 1rem;
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
@@ -15,11 +15,13 @@ head > nav {
 }
 
 /* Sidebar links */
-.sidebar li{
+.sidebar div{
     display: block;
     color: black;
-    padding: 2rem;
     text-decoration: none;
+    align-items: center;
+    padding-left: 1rem; 
+    padding-right: 1rem;
 }
 
 /* Active/current link */
