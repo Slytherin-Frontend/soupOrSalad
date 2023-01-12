@@ -50,7 +50,6 @@ As the user opens the website, they will have the option to make a profile by cl
 
 
 Here they will be able to select their location, and the option for selecting diet, health, and cuisine prefences:
-<img src="./Images/Preferences.png">
 After selecting the "save" button, they can go back to the home page and enter an ingredient to see a list of soups or salads that use the ingredient typed by the user:
 
 
