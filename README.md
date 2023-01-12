@@ -1,9 +1,9 @@
 # slytherinWebApp
-Project title: SOUP or SALAD
+<strong>Project title:</strong> SOUP or SALAD
 <br>
-contributers: Moral, Victoria, Crystal
+<strong>contributers:</strong> Moral, Victoria, Crystal
 
-Project Description:
+<strong>Project Description:</strong>
 <br>
 Soup or Salad is a fun suggestion web-based app providing a list of soup or salad recipes depending on weather conditions in the user's location. The user will be able to enter their location (which will be saved in the client-side and can be changed at any time), as well as an optional dietary profile, and 1-2 ingredients they currently have or are interested in using.
 <br>
