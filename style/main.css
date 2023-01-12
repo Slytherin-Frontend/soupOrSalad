@@ -65,7 +65,7 @@ div.content {
         position: relative;
     }
 
-    .sidebar li {
+    .sidebar div {
         float: left;
         justify-content: center;
         align-items: center;
